@@ -1,0 +1,19 @@
+{
+  "name": "expressjsproject",
+  "version": "1.0.0",
+  "description": "Thuis is a simple Express JS Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
