@@ -4,7 +4,8 @@
   "description": "Thuis is a simple Express JS Project",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon index.js"
+    "start": "node index.js",
+    "dev":"npx nodemon index.js"
   },
   "keywords": [],
   "author": "",

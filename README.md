@@ -1,2 +1,2 @@
 # ExpressJSProject
-Thuis is a simple Express JS Project
+This is a simple Express JS Project
