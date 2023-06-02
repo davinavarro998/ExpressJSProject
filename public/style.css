@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(128, 128, 128, 0.497);
+}
+
+h1{
+    text-align: center;
+}
+.my-list{
+    background-color: white;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    margin: 10px auto;
+    border-radius: 15px;
+}
+
+.my-list p {
+    margin: 10px;
+    font-size: 25px;
+}
