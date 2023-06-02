@@ -10,6 +10,10 @@
 <body>
     <h1>To Do List</h1>
     <div class="my-list">
+        <form action="/" method="post">
+            <input type="text" placeholder="task here" name="myTask"/>
+            <input type="submit" value="Submit Task"/>
+        </form>
         <% for(let i = 0; i < peopleGroup.length; i++) {%>
             <p><%=peopleGroup[i]%> <a href="/delete/<%= i%>">X</a></p>
         <%}%>
