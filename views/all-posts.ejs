@@ -29,13 +29,14 @@
                         <td><%=posts[i].title %></td>
                         <td><%=posts[i].content %></td>
                         <td>
-                            <a href="/all-posts">View</a> |
-                            <a href="/edit-post/<%= posts[i].id %>">Edit</a>
-                            <form method="POST" action="/delete-post/<%=posts[i].id %>"
-                                onsubmit="return confirm('Are you sure you want to delete this post?');" id="delete-form">
+                            <a class="post-option" href="/view-post/<%= posts[i].id %>">View</a> |
+                            <a class="post-option" href="/edit-post/<%= posts[i].id %>">Edit</a> |
+                            <form method="POST" action="/delete-post/<%= posts[i].id %>" class="post-option"
+                                onsubmit="return confirm('Are you sure you want to delete this post?');">
                                 <input type="submit" value="Delete">
                             </form>
                         </td>
+
                     </tr>
                 <%} %>
                 <!-- More rows as necessary -->

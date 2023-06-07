@@ -62,6 +62,17 @@ app.post("/update-post/:id", (req, res) => {
   }
 });
 
+app.get("/view-post/:id", (req, res) => {
+  const { id } = req.params;
+  const post = posts.find((post) => post.id === +id);
+  if (post) {
+    res.render("view-post", { post: post });
+  } else {
+    res.status(404).send("Post not found");
+  }
+});
+
+
 
 
 app.listen(port, () => {
