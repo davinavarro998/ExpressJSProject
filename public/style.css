@@ -97,6 +97,14 @@ form {
     max-width: 500px;
 }
 
+#delete-form{
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    padding: 10px;
+    background-color: aqua;
+}
+
 label {
     display: block;
     margin-bottom: 5px;
