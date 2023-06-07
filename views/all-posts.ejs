@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>All posts</title>
+</head>
+<body>
+    <header>
+        <h1>All Posts</h1>
+    </header>
+    <main>
+        <a href="/home">Home Page</a>
+        <table class="posts-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Options</th>
+                    <!-- <th>Date</th>
+                    <th>Action</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i = 0; i < posts.length; i++){ %>
+                    <tr>
+                        <td><%=posts[i].title %></td>
+                        <td><%=posts[i].content %></td>
+                        <td>
+                            <a href="#">View</a> |
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                <%} %>
+                <!-- More rows as necessary -->
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

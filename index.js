@@ -5,53 +5,33 @@ require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // Used to parse JSON bodies
-const posts = [];
-
-
+app.use(express.static("public"));
 
 app.set('view engine', 'ejs');
-
 app.set('views', path.join(__dirname, '/views'));
-
-
-
 const port = process.env.PORT;
+let posts = [];
 
-app.get("/", (req, res) => {
-    console.log(req.body);
-    res.status(200).render('index');
+
+app.get('/home', (req, res)=>{
+    res.status(200).render('home', {});
 });
 
-app.get('/post', (req, res)=>{
-    const post = {
-        title:"My first post",
-        content: "This is the content of my first post"
-    }
-    res.status(200).render('post.ejs', post);
+app.get('/all-posts', (req,res) => {
+    res.status(200).render('all-posts', {posts:posts});
 });
 
-app.post("/posts", (req, res) => {
-    console.log(req.body);
-    posts.push(req.body);
-    res.redirect(`/posts/${posts.length - 1}`);
+app.get('/start-posting', (req, res)=> {
+    res.status(200).render('start-posting', {});
 });
 
-app.get("/posts/:id", (req, res) => {
-    const id = req.params.id;
-    const post = posts[id];
-    res.render("post", post);
+app.post('/all-posts', (req, res)=>{
+    const body = req.body;
+    posts.push(body);
+    res.render('all-posts', {posts:posts});
 });
 
-app.get('/posts', (req, res)=>{
-    console.log(posts);
-    res.status(200).render('posts', {posts:posts})
-});
-
-
-app.get('/create', (req, res) => {
-    res.status(200).render('create');
-});
 
 app.listen(port, () => {
-    console.log(`Blog app listening on http://localhost:${port}`);
+    console.log(`Blog app listening on http://localhost:${port}/home`);
 });
