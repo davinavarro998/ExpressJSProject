@@ -7,6 +7,9 @@
 }
 
 body {
+    display: flex;
+        min-height: 100vh;
+        flex-direction: column;
     font-family: Arial, sans-serif;
     background: #f6f8fa;
     color: #24292e;
@@ -53,6 +56,10 @@ header {
 header h1 {
     color: #fff;
     text-align: center;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 /* Blog post and table */
@@ -141,7 +148,7 @@ footer {
     text-align: center;
     color: #586069;
     font-size: 14px;
-    margin-top: 32px;
+    flex-shrink: 0;
 }
 
 /* Responsiveness */
