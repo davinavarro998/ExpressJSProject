@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, '/views'));
 const port = process.env.PORT;
 
 app.get("/", (req, res) => {
-    console.log(req);
+    console.log(req.body);
     res.status(200).render('index');
 });
 
@@ -31,6 +31,7 @@ app.get('/post', (req, res)=>{
 });
 
 app.post("/posts", (req, res) => {
+    console.log(req.body);
     posts.push(req.body);
     res.redirect(`/posts/${posts.length - 1}`);
 });
@@ -41,6 +42,10 @@ app.get("/posts/:id", (req, res) => {
     res.render("post", post);
 });
 
+app.get('/posts', (req, res)=>{
+    console.log(posts);
+    res.status(200).render('posts', {posts:posts})
+});
 
 
 app.get('/create', (req, res) => {
